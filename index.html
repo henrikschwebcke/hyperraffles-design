@@ -1,0 +1,167 @@
+<!docType html>
+<html lang="en">
+    <head>
+
+        <title>HyperRaffles</title>
+        <meta charset="UTF-8"/>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/main.phone.css" />
+    </head>
+    <body>
+        <div id="app">
+            <div class="menu">
+                <a href="/" title="List of all raffles"><b>Raffles</b></a>
+                <div class="right">
+                    <!-- TODO IF LOGGED IN
+
+                        <a href="/deposit" title="Deposit">
+                            <i class="fas fa-dollar-sign"></i> 
+                            <b class="balance">0.00</b>
+                        </a>
+                        <a href="/account" title="Your account">
+                            <img src="<%-user.avatar%>" title="<%-user.username%>" style="border-radius: 50%; max-height: 35px; margin-bottom: -12px;">
+                        </a>
+                      
+                      -->
+                        <a href="/help" title="Help, FAQ and Support"><i class="fas fa-question"></i></a>
+                        <!-- TODO IF LOGGED IN
+                        <a href="/logout" title="Logout"><i class="fas fa-power-off"></i></a>
+                      -->
+                        <a href="/login" title="Login with OPSkins" style="text-transform: none;">Login with OPSkins</a>
+                </div>
+            </div>
+            <div class="chat">
+                <div class="title">
+                    <b class="highlight">Hyper</b><b>Raffles</b>
+                </div>
+                <div class="messages">
+                  <div class="chat-msg" id="15" v-for="i in 50">
+                    <div class="avatar">
+                      <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ac/acab4a6b8fa88eb44569321355a1750fed412bb1_full.jpg"/>
+                    </div>
+                    <div class="text">
+                      <div class="user">ruukiZ</div>
+                      <div class="message">Hello. This is a test message. To show you the chat.</div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="form">
+                    <div class="send">
+                        <input class="sendMessage" placeholder="Send message..."/>
+                        <img class="sendMessageButton" src="images/send.png"/>
+                    </div>
+                </div>
+            </div>
+            <!-- CONTENT -->
+            
+
+            <div class="content">
+                <div class="raffles">
+
+                  <div class="stats">
+
+                    <div class="box">
+                      <div class="body">
+                        <div class="stats">
+                          <div class="amount">55,923</div>
+                          <div class="caption">completed</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="box">
+                      <div class="body">
+                        <div class="stats">
+                          <div class="amount">$93,839</div>
+                          <div class="caption">paid out</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="box">
+                      <div class="body">
+                        <div class="stats">
+                          <div class="amount">$975</div>
+                          <div class="caption">highest raffle</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="box">
+                      <div class="body">
+                        <div class="stats">
+                          <div class="amount">356</div>
+                          <div class="caption">users online</div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="filters">
+                    <select class="filter" id="filter_type">
+                      <option value="all">What item type?</option>
+                      <option disabled>─</option>
+                      <option value="op_vgo">VGO</option>
+                      <option value="op_giftcard">Gift Cards</option>
+                      <option value="op_digital_art">WAX Digital Art</option>
+                    </select>
+                    <select class="filter" id="filter_worth">
+                      <option value="all">How expensive?</option>
+                      <option disabled>------</option>
+                      <option value="w_10_50">$0.10 - $0.50</option>
+                      <option value="w_50_100">$0.50 - $1.00</option>
+                      <option value="w_100_500">$1.00 - $5.00</option>
+                      <option value="w_500_1000">$5.00 - $10.00</option>
+                      <option value="w_1000_5000">$10.00 - $50.00</option>
+                      <option value="w_5000_10000">$50.00 - $100.00</option>
+                      <option value="w_10000_50000">$100.00 - $500.00</option>
+                      <option value="w_50000_infin">$500.00 - &infin;</option>
+                    </select>
+                    <select class="filter" id="filter_users">
+                      <option value="all">Should players already be in it?</option>
+                      <option disabled>─</option>
+                      <option value="u_yes">Only raffles with atleast 1 player</option>
+                      <option value="u_no">Only empty raffles</option>
+                      <option value="u_oneleft">Only raffles with 1 slot open</option>
+                    </select>
+                    <select class="filter" id="filter_count">
+                      <option value="all">How many raffles do you want to be displayed?</option>
+                      <option disabled>─</option>
+                      <option value="c_5">Show 5 raffles</option>
+                      <option value="c_10">Show 10 raffles</option>
+                      <option value="c_20">Show 20 raffles</option>
+                      <option value="c_50">Show 50 raffles</option>
+                      <option value="c_100">Show 100 raffles</option>
+                    </select>
+                    <select class="filter" id="filter_sort">
+                      <option value="s_type_asc">Sorting: Type ascending</option>
+                      <option value="s_type_desc">Sorting: Type descending</option>
+                      <option value="s_worth_asc">Sorting: Worth ascending</option>
+                      <option value="s_type_desc">Sorting: Worth descending</option>
+                      <option value="s_users_asc">Sorting: User count ascending</option>
+                      <option value="s_users_desc">Sorting: User count descending</option>
+                    </select>
+
+                  </div>
+                  <div class="rafflesList">
+                    <div class="raffle" v-for="i in 25" title="Headphones not by Dr.Dre v1.0">
+                      <!-- Unrolled-->
+                      <img class="game" src="https://opskins.com/images/games/logo-small-stickers.jpg" />
+                      <span class="users">1 / 2</span>
+                      <img class="item" src="data:image/png;base64,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" />
+                      <b class="name">Headphones not by Dr.Dre v1.0</b>
+                      <small class="worth"><i class="fas fa-dollar-sign"></i> 175.00</small>
+                      <small class="cost"><i class="fas fa-dollar-sign"></i> 329.99</small>
+                      <span class="join">Click to enter</span>
+                      <!-- Rolled-->
+                      <img class="winner" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ac/acab4a6b8fa88eb44569321355a1750fed412bb1_full.jpg" />
+                    </div>
+
+                  </div>
+                </div>
+            </div>           
+            <!--// CONTENT //-->
+          </div>
+      </body>
+  </html>
