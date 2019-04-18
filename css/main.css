@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700,900');
+
+html,body {
+    padding: 0;
+    margin: 0;
+    background-color: #1C1D23;
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: local;
+    height: 100%;
+    width: 100%;
+    font-family: 'Titillium Web', cursive;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.menu {
+    background-color: rgb(0,0,0,.35);
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.menu a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    outline: none;
+    line-height: 50px;
+    margin: 0;
+    height: 50px;
+    padding: 12.5px 15px;
+    transition: color 0.2s;
+}
+.menu a:first-child {
+    margin-left: 300px;
+}
+.menu a:hover {
+    background-color: rgb(150,150,150,.1);
+    color: #9e25c4;
+}
+
+.chat {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgb(150,150,150,.1);
+    z-index: 5;
+}
+
+.chat .title{
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    font-size: 1.5em;
+    color :white;
+}
+
+.chat .messages {
+    width: 100%;
+    height: calc(100% - 50px - 75px);
+    overflow-y: auto;
+}
+.chat .messages .chat-msg {
+    width: calc(100% - 20px);
+    min-height: calc(50px);
+    padding: 5px;
+    margin: 10px 5px;
+    overflow: hidden;
+    background-color: rgb(0,0,0,.2);
+    position: relative;
+    border-radius: 8px;
+}
+.chat .messages .chat-msg .avatar {
+  float: left;
+  width: 50px;
+  height: 100%;
+}
+.chat .messages .chat-msg .avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.chat .messages .chat-msg .text {
+  float: right;
+  width: calc(100% - 65px);
+  padding-right: 5px;
+  color: white;
+  height: 100%;
+}
+.chat .messages .chat-msg .text .user {
+  width: 100%;
+  font-weight: 700;
+}
+
+.chat .form {
+    height: 75px;
+    width: 100%;
+    position: relative;
+}
+.chat .form .send {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: calc(100% - 40px);
+    width: calc(100% - 40px);
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    color: rgb(255,255,255,.2);
+    background-color: rgb(0,0,0,.2);
+}
+.chat .form .send input {
+    height: calc(100%);
+    width: calc(100% - 30px);
+    border: none;
+    outline: none;
+    color: rgb(255,255,255,.5);
+    background-color: transparent;
+    float: left;
+}
+.chat .form .send .sendMessageButton {
+    float: right;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    padding-top: 5px;
+    -webkit-filter: drop-shadow(1px 1px 1px rgb(255,255,255,.0));
+    filter: drop-shadow(1px 1px 1px rgb(255,255,255,.0));
+    transition: filter 0.5s;
+}
+
+.chat .form .send .sendMessageButton:hover {
+  -webkit-filter: drop-shadow(1px 1px 1px rgb(255,255,255,.2));
+  filter: drop-shadow(1px 1px 1px rgb(255,255,255,.2));
+}
+
+
+.raffles {
+
+    height: calc(100vh - 100px);
+    width: calc(100% - 350px);
+    margin: 25px;
+    margin-left: 325px;
+}
+
+/* Stats Box */
+
+.raffles .box {
+  float: left;
+  margin: 5px;
+	background: linear-gradient(9deg, rgb(158, 37, 196,.2), rgb(150,150,150,.2));
+	border-radius: 5px;
+  width: calc(25% - 10px);
+}
+
+.raffles .box .body {
+	padding: 0 25px;
+}
+
+.stats {
+	color: #fff;
+	position: relative;
+	padding-bottom: 25px;
+	padding-top: 25px;
+  text-align: center;
+  max-height: 300px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.stats .amount {
+	font-size: 35px;
+	font-weight: bold;
+	line-height: 1.2;
+}
+
+.stats.caption {
+	font-size: 22px;
+}
+
+.content {
+  position: fixed;
+  width: calc(100%);
+}
+
+.filters {
+  clear: both;
+  width: 100%;
+  height: 25px;
+  margin: 5px 0px;
+}
+.filters .filter {
+  border-radius: 8px;
+  border: none;
+  font-size: 12px;
+  outline: none;
+  color: rgb(255,255,255,.5);
+  background-color: rgb(0,0,0,.2);
+  width: calc(20% - 10px);
+  margin: 5px;
+  padding: 6.5px 0px;
+  float: left;
+}
+.filter option {
+    margin: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    outline: none;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.rafflesList {
+  clear: both;
+  height: calc(100% - 110px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.raffle {
+    height: calc(50% - 15px);
+    width: calc(20% - 10px);
+    min-height: 300px;
+    margin: 5px;
+    background-color: rgb(150,150,150,.2);
+    position: relative;
+    border-radius: 5px;
+    border-bottom: 5px solid #9e25c4;
+    float: left;
+    cursor: pointer;
+      -webkit-box-shadow: 3px 3px 50px 5px rgba(128,128,128,.0);
+      -moz-box-shadow: 3px 3px 50px 5px rgba(128,128,128,.0);
+      box-shadow: 3px 3px 50px 5px rgba(128,128,128,0.0);
+      transition: all 1s;
+}
+
+.raffle:hover {
+background-color: rgb(150,150,150,.25);
+}
+
+.raffle .game {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 5px;
+  max-height: 50px;
+  max-width: 50px;
+  z-index: 1;
+}
+
+.raffle .users {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  font-weight: 700;
+  color: white;
+  z-index: 1;
+}
+
+.raffle .join {
+transition: all 0.5s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #9e25c4;
+  border: 15px;
+  padding: 5px 10px;
+  outline: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+  opacity: 0;
+  cursor: pointer;
+  text-align: center;
+  z-index: 1;
+}
+.raffle .join:active {
+outline: none;
+}
+.raffle .join:visited {
+outline: none;
+}
+
+.raffle:hover .join {
+opacity: 1;
+}
+.raffle.rolled:hover .join {
+opacity: 0;
+}
+
+
+.raffle .item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+  max-height: calc(100% - 20px);
+  max-width: calc(100% - 20px);
+  transition: all 0.5s;
+}
+
+.raffle.rolled .item {
+  opacity: 0.6;
+    filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%);
+}
+
+.raffle:hover .item {
+  transform: translateX(-50%) translateY(-50%) scale(1.05);
+}
+
+.raffle .name {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  max-width: 80%;
+  font-weight: 900;
+  color: white;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+  z-index: 1;
+}
+
+.raffle .worth {
+  position: absolute;
+  top: 0px;
+  font-size: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  max-width: calc(100% - 50px);
+  font-weight: 700;
+  color: white;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+  z-index: 1;
+}
+.raffle .cost {
+  position: absolute;
+  bottom: 10px;
+  font-size: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  max-width: 80%;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+  z-index: 1;
+}
+.raffle.rolled .users {
+  display: none;
+}
+
+.raffle .winner {
+  display: none;
+}
+
+.raffle.rolled .winner {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: block;
+  z-index: 1;
+  max-height: 25px;
+  max-width: 25px;
+  border-radius: 50%;
+  padding: 1px;
+  border: 2px solid #9e25c4;
+}
+
+.raffle.rolled {
+  cursor: default;
+}
+
+
+
+.highlight {
+    color: #9e25c4;
+}
+
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(255,255,255,.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255,255,255,.4);
+}

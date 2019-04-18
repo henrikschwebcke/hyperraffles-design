@@ -1,0 +1,39 @@
+@media only screen and (max-width: 1051px) {
+    .raffles .box {
+      width: calc(50% - 10px);
+    }
+    .stats {
+      font-size: 10px;
+    }
+  
+    .stats .amount {
+        font-size: 15px;
+    }
+  
+    .stats.caption {
+        font-size: 10px;
+    }
+  
+    .raffle {
+        width: calc(50% - 10px);
+    }
+  
+    .filters .filter {
+        width: calc(50% - 10px);
+    }
+    .content {
+      overflow-y: auto;
+    }
+  }
+  @media only screen and (max-width: 750px) {
+    .raffles .box {
+      width: calc(100% - 10px);
+    }
+    .raffle {
+      width: calc(100% - 10px);
+    }
+    .filters .filter {
+        width: calc(100% - 10px);
+    }
+  }
+  
